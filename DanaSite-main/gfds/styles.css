@@ -1,0 +1,292 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/*START HEADER*/
+header {
+    background-color: #ffffff;
+    color: white;
+    padding: 1em;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    max-height: 70px;
+    margin-left: 100px;
+}
+
+nav ul {
+    margin-right: 120px;
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}
+
+.dropdown {
+    display: inline-block;
+}
+
+.dropbtn {
+    color: rgb(0, 0, 0);
+    padding: 14px 16px;
+    font-size: 16px;
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    display: block;
+    text-decoration: none;
+      transition: background 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input[type=text] {
+  width: 400px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+    border-radius: 20px;
+    margin: 10px;
+}
+.search-bar input[type=text]:focus {
+  border: 3px solid #555;
+}
+
+.search-bar button {
+  display: inline-block;
+  border-radius: 15px;
+  background-color: #E19FAE;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 15px;
+  padding: 12px 15px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.search-bar button span{
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.search-bar button span:after{
+    content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+.search-bar button:hover span{
+    padding-right: 25px;
+}
+
+.search-bar button:hover span:after{
+    opacity: 1;
+    right: 0;
+}
+/*end HEADER*/
+
+
+/*start CART*/
+/* Стили для сетки с тремя строками и четырьмя столбцами */
+.product-list {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr); /* Три строки равной высоты */
+    grid-template-columns: repeat(3, 25%); /* Четыре столбца равной ширины */
+    gap: 10px; /* Расстояние между элементами */
+    align-items: center;
+    justify-content: center;
+}
+
+/* Стили для отдельной карточки товара */
+.product {
+    border: none;
+    text-align: center;
+    width: 80%;
+    margin: 50px;
+    text-align: left;
+}
+
+
+.product img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.product button{
+    display: flex;
+    padding: 18px 43px 19px 43px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border: 2px solid #5C8692;
+    background: transparent;
+    color: #141414;
+    text-align: center;
+    font-family: Arial;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 125%; /* 17.5px */
+    letter-spacing: 1.68px;
+    text-transform: uppercase;
+     transition: background 0.3s ease, color 0.3s ease;
+}
+
+.product button:hover{
+    background: #5C8692;
+    color: #fff;
+}
+.product button:active{
+    transform: scale(0.98);
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+
+.price {
+    color: #e44d26;
+    font-weight: bold;
+}
+
+/*end CART*/
+
+
+/*modal*/
+
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    text-align: left;
+    padding: 50px; /* Добавьте отступы для контента в корзине */
+}
+
+.cart-item-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 10px; /* Добавьте отступы между товарами в корзине */
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.cart-item-name {
+    font-weight: bold;
+}
+
+.cart-item-price{
+    padding-left: 10px;
+    padding-right: 150px;
+}
+
+.remove-from-cart {
+    background-color: #ff0000; /* Цвет кнопки удаления */
+    color: #fff; /* Цвет текста на кнопке удаления */
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.remove-from-cart:hover {
+    background-color: #ff3333; /* Измененный цвет кнопки при наведении */
+}
+
+.checkout-button {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 10px; /* Отступ сверху */
+}
+
+.checkout-button:hover {
+    background: #62a664;
+    color: #fff;
+}
+
+.checkout-button:active{
+      transform: scale(0.98);
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+
+/*end modal*/
+

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Makeup Shop</title>
+</head>
+<body>
+
+ <div class="popup" id="popup">
+        <div class="popup-content">
+            <span class="close" id="closePopup">&times;</span>
+            <h2>Корзина</h2>
+             <section class="cart">>
+
+             </section>
+            <div id="emptyCartMessage" style="display: block;">Корзина пуста</div>
+            <button class="checkout-button" style="display: none;">Записаться</button>
+        </div>
+    </div>
+    <div class="overlay" id="overlay"></div>
+<!--NAVBAR-->
+ <header>
+        <a href="websiiiiii.html">
+            <div class="logo">
+              <img src="assets/logomake.png" alt="Makeup Shop Logo">
+            </div>
+        </a>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search...">
+            <button type="submit" onclick="searchProducts()" style="vertical-align:middle"><span>Search</span></button>
+        </div>
+        <nav>
+           <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#" class="cartOpen">Cart</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+ </header>
+
+<!--MAIN photo-->
+ <main>
+     <img class="excl" src="assets/excl.png" alt="excl" width="100%">
+ </main>
+
+    <section class="product-list">
+    </section>
+
+</footer>
+
+</body>
+
+<script src="main.js"></script>
+</html>
